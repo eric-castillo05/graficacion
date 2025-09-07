@@ -1,74 +1,274 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="500" viewBox="0 0 1000 500">
-    <rect width="1000" height="500" fill="black"/>
-  
-  <!-- body -->
-  <ellipse cx="500" cy="455" rx="275" ry="330" fill="#946512"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1000"
+   height="500"
+   viewBox="0 0 1000 500"
+   version="1.1"
+   id="svg22"
+   sodipodi:docname="tarea2.svg"
+   inkscape:version="1.4.2 (2aeb623e1d, 2025-05-12)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs22" />
+<sodipodi:namedview
+   id="namedview22"
+   pagecolor="#ffffff"
+   bordercolor="#000000"
+   borderopacity="0.25"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   inkscape:zoom="77.827651"
+   inkscape:cx="496.73862"
+   inkscape:cy="267.77758"
+   inkscape:window-width="1920"
+   inkscape:window-height="1011"
+   inkscape:window-x="0"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg22" />
+<rect
+   width="1000"
+   height="500"
+   fill="black"
+   id="rect1" />
+<!-- body -->
+<ellipse
+   cx="500"
+   cy="455"
+   rx="275"
+   ry="330"
+   fill="#946512"
+   id="ellipse1" />
+<!-- peaks -->
+<!-- 12 18 -->
+<polygon
+   points="495,400 505,400 505,100 495,100"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="polygon1" />
+<polygon
+   points="485,390 495,390 495,110 485,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="polygon2" />
+<polygon
+   points="515,390 505,390 505,110 515,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="polygon3" />
+<!-- 15 21 -->
+<polygon
+   points="495,400 505,400 505,100 495,100"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(-45 500 255)"
+   id="polygon4" />
+<polygon
+   points="485,390 495,390 495,110 485,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(-45 500 255)"
+   id="polygon5" />
+<polygon
+   points="515,390 505,390 505,110 515,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(-45 500 255)"
+   id="polygon6" />
+<!-- 14 15 -->
+<polygon
+   points="495,400 505,400 505,100 495,100"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(45 500 255)"
+   id="polygon7" />
+<polygon
+   points="485,390 495,390 495,110 485,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(45 500 255)"
+   id="polygon8" />
+<polygon
+   points="515,390 505,390 505,110 515,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(45 500 255)"
+   id="polygon9" />
+<!-- 17 22 -->
+<polygon
+   points="495,400 505,400 505,100 495,100"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(90 500 255)"
+   id="polygon10" />
+<polygon
+   points="485,390 495,390 495,110 485,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(90 500 255)"
+   id="polygon11" />
+<polygon
+   points="515,390 505,390 505,110 515,110"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   transform="rotate(90 500 255)"
+   id="polygon12" />
+<!-- head -->
+<circle
+   cx="500"
+   cy="250"
+   r="100"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="circle12" />
+<!-- right eye shadow -->
+<circle
+   cx="453"
+   cy="245"
+   r="50"
+   fill="#979894"
+   stroke="none"
+   stroke-width="1"
+   id="circle13" />
+<!-- left eye shadow -->
+<circle
+   cx="547"
+   cy="245"
+   r="50"
+   fill="#979894"
+   stroke="none"
+   stroke-width="1"
+   id="circle14" />
+<!-- right eye -->
+<circle
+   cx="450"
+   cy="250"
+   r="50"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="circle15" />
+<!-- left eye -->
+<circle
+   cx="550"
+   cy="250"
+   r="50"
+   fill="#F8C977"
+   stroke="black"
+   stroke-width="1"
+   id="circle16" />
+<!-- straight line head -->
+<line
+   x1="500"
+   y1="270"
+   x2="500"
+   y2="350"
+   stroke="black"
+   stroke-width="3"
+   rx="10"
+   ry="10"
+   id="line16" />
+<!-- lower triangle -->
+<polygon
+   points="500,290 515,270 485,270"
+   fill="black"
+   stroke="none"
+   stroke-witdh="3"
+   id="polygon16" />
+<!-- upper triangle -->
+<polygon
+   points="500,245 515,265 485,265"
+   fill="black"
+   stroke="none"
+   stroke-witdh="3"
+   id="polygon17" />
+<!-- fill nose - mouth -->
+<rect
+   width="20.014252"
+   height="4.9928508"
+   x="489.98575"
+   y="265.00635"
+   fill="#f8c977"
+   id="rect17" />
+<!-- eyes -->
+<rect
+   width="30"
+   height="7"
+   x="440"
+   y="240"
+   fill="black"
+   id="rect18" />
+<rect
+   width="30"
+   height="7"
+   x="530"
+   y="240"
+   fill="black"
+   id="rect19" />
+<!-- upper head lines -->
+<path
+   d="M450 195 Q440 180 450 165"
+   fill="none"
+   stroke="#979894"
+   stroke-width="3"
+   rx="10"
+   ry="10"
+   id="path19" />
+<path
+   d="M550 195 Q560 180 550 165"
+   fill="none"
+   stroke="#979894"
+   stroke-width="3"
+   rx="10"
+   ry="10"
+   id="path20" />
+<!-- lower head lines -->
+<line
+   x1="455"
+   y1="300"
+   x2="455"
+   y2="260"
+   fill="none"
+   stroke="#979894"
+   stroke-width="6"
+   id="line20" />
+<line
+   x1="545"
+   y1="300"
+   x2="545"
+   y2="260"
+   fill="none"
+   stroke="#979894"
+   stroke-width="6"
+   id="line21" />
+<!-- text -->
 
-
-  <!-- peaks -->
-  <!-- 12 18 -->
-  <polygon points="495,400 505,400 505,100 495,100" fill="#F8C977" stroke="black" stroke-width="1" ></polygon>
-  <polygon points="485,390 495,390 495,110 485,110" fill="#F8C977" stroke="black" stroke-width="1" ></polygon>
-  <polygon points="515,390 505,390 505,110 515,110" fill="#F8C977" stroke="black" stroke-width="1" ></polygon>
-  <!-- 15 21 -->
-  <polygon points="495,400 505,400 505,100 495,100" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(-45 500 255)"></polygon>
-  <polygon points="485,390 495,390 495,110 485,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(-45 500 255)"></polygon>
-  <polygon points="515,390 505,390 505,110 515,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(-45 500 255)" ></polygon>
- 
-  <!-- 14 15 -->
-   <polygon points="495,400 505,400 505,100 495,100" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(45 500 255)"></polygon>
-  <polygon points="485,390 495,390 495,110 485,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(45 500 255)"></polygon>
-  <polygon points="515,390 505,390 505,110 515,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(45 500 255)" ></polygon>
- 
-  <!-- 17 22 -->
-    <polygon points="495,400 505,400 505,100 495,100" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(90 500 255)"></polygon>
-  <polygon points="485,390 495,390 495,110 485,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(90 500 255)"></polygon>
-  <polygon points="515,390 505,390 505,110 515,110" fill="#F8C977" stroke="black" stroke-width="1" transform="rotate(90 500 255)" ></polygon>
- 
-
-
-  <!-- head -->
-  <circle cx="500" cy="250" r="100" fill="#F8C977" stroke="black" stroke-width="1"/>
-
-  
-  <!-- right eye shadow -->
-  <circle cx="453" cy="245" r="50" fill="#979894" stroke="none" stroke-width="1"/>
-  <!-- left eye shadow -->
-  <circle cx="547" cy="245" r="50" fill="#979894" stroke="none" stroke-width="1"/>
-
-  <!-- right eye -->
-  <circle cx="450" cy="250" r="50" fill="#F8C977" stroke="black" stroke-width="1"/>
-  <!-- left eye -->
-  <circle cx="550" cy="250" r="50" fill="#F8C977" stroke="black" stroke-width="1"/>
-
-  <!-- straight line head -->
-  <line x1="500" y1="270" x2="500" y2="350" stroke="black" stroke-width="3" rx="10" ry="10" />
-  
-  <!-- lower triangle -->
-  <polygon points="500,290 515,270 485,270" fill="black" stroke="none" stroke-witdh="3"></polygon>
-
-  <!-- upper triangle -->
-  <polygon points="500,245 515,265 485,265" fill="black" stroke="none" stroke-witdh="3"></polygon>
-  
-  <!-- fill nose - mouth -->
-  <rect width="20" height="5" x="490" y="265" fill="#F8C977" />
-  
-  <!-- eyes -->
-  <rect width="30" height="7" x="440" y="240" fill="black"/>
-  <rect width="30" height="7" x="530" y="240" fill="black"/>
-
-  <!-- upper head lines -->
-  <path d="M450 195 Q440 180 450 165" fill="none" stroke="#979894" stroke-width="3" rx="10" ry="10"></path>
-  <path d="M550 195 Q560 180 550 165" fill="none" stroke="#979894" stroke-width="3" rx="10" ry="10"></path>
-  <!-- lower head lines -->
-  <line x1="455" y1="300" x2="455" y2="260" fill="none" stroke="#979894" stroke-width="6"/>
-  <line x1="545" y1="300" x2="545" y2="260" fill="none" stroke="#979894" stroke-width="6"/>
-
-  <!-- text -->
   ouaiiiis bouhhh
-  <text x="460" y="440" fill="white">Ouaiiiis</text>
-  <text x="470" y="460" fill="white">Bouhhhh</text>
-  
+  <text
+   x="460"
+   y="440"
+   fill="white"
+   id="text21">Ouaiiiis</text>
+<text
+   x="470"
+   y="460"
+   fill="white"
+   id="text22">Bouhhhh</text>
 </svg>
-
