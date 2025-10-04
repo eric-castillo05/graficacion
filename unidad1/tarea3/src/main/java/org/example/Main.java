@@ -165,12 +165,6 @@ public class Main extends JFrame {
         g.drawRect(270, 280, 290, 20);
         g.fillRect(270, 280, 290, 20);
 
-
-
-
-
-
-
     }
 
     public Main() {
