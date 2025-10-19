@@ -102,7 +102,7 @@ public class Main extends JFrame {
                 int y_d = CoorDY(y);
                 g.drawRect(x_d, y_d, 1, 1);
             }
-            r += 0.01;
+            r += 0.001;
         }
         g.setColor(Color.MAGENTA);
 
