@@ -37,10 +37,95 @@ public class Main extends s2D{
             try {
                 Thread.sleep(5);
             } catch (Exception e) {}
+//            if (i != 198) {
+//                g.setColor(Color.BLACK);
+//                dibObj2D(tier_t, g);
+//                dibObj2D(motorcycle_t, g);
+//            }
             g.setColor(Color.BLACK);
             dibObj2D(tier_t, g);
             dibObj2D(motorcycle_t, g);
+            g.setColor(Color.WHITE);
+            ejes(g);
+
         }
+        ejes(g);
+        for (int i = -30; i >= -90; --i) {
+            g.setColor(Color.CYAN);
+
+            double cx = 330 - 199, cy = 105;
+
+            m2D rotation1 = new m2D();
+            rotation1.rotacion(i);
+
+            m2D trans1 = new m2D();
+            trans1.traslacion(cx, cy);
+
+            m2D mtc = rotation1.multiplica(trans1);
+            obj2D motorcycle_t = motorcycle.transforma(mtc);
+            dibObj2D(motorcycle_t, g);
+
+
+            m2D rotate = new m2D();
+            obj2D tier_t = tier.transforma(mtc);
+            dibObj2D(tier_t, g);
+
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {}
+                g.setColor(Color.BLACK);
+                dibObj2D(motorcycle_t, g);
+                dibObj2D(tier_t, g);
+
+
+        }
+        double cx = 330 - 199, cy = 105;
+
+        for (double i = 0; i <= 500; i+=0.1) {
+            g.setColor(Color.GREEN);
+
+            m2D rot1 = new m2D();
+            rot1.rotacion(-90);
+
+            m2D trans1 = new m2D();
+            trans1.traslacion(cx, cy);
+
+            m2D trans2 = new m2D();
+            trans2.traslacion(0, cy - i);
+
+            m2D esc1 = new m2D();
+            esc1.escalacion(1 - (i / 500), 1 - (i / 500));
+
+            m2D mtc = trans1.multiplica(rot1).multiplica(esc1).multiplica(trans2);
+
+            obj2D motorcycle_t = motorcycle.transforma(mtc);
+            dibObj2D(motorcycle_t, g);
+
+            double angle = i * 5;
+            double tx = -90, ty = -60;
+
+            m2D toOrigin = new m2D();
+            toOrigin.traslacion(-tx, -ty);
+            m2D rotate = new m2D();
+            rotate.rotacion(angle);
+            m2D back = new m2D();
+            back.traslacion(tx, ty);
+            m2D mtc1 = toOrigin.multiplica(rot1).multiplica(esc1).multiplica(trans1).multiplica(back);
+            obj2D tier_t = tier.transforma(mtc);
+            dibObj2D(tier_t, g);
+
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {}
+            g.setColor(Color.BLACK);
+            dibObj2D(motorcycle_t, g);
+            dibObj2D(tier_t, g);
+
+        }
+
+
+
+
     }
     public static void main(String[] args) {
         Main main = new Main();
