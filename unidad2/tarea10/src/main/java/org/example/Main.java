@@ -81,7 +81,7 @@ public class Main extends s2D{
         }
         double cx = 330 - 199, cy = 105;
 
-        for (double i = 0; i <= 500; i+=0.1) {
+        for (double i = 0; i <= 10; i+=0.1) {
             g.setColor(Color.GREEN);
 
             m2D rot1 = new m2D();
@@ -115,14 +115,54 @@ public class Main extends s2D{
             dibObj2D(tier_t, g);
 
             try {
-                Thread.sleep(10);
+                Thread.sleep(20);
             } catch (Exception e) {}
             g.setColor(Color.BLACK);
             dibObj2D(motorcycle_t, g);
             dibObj2D(tier_t, g);
+        }
+        ejes(g);
+        for (int i = 0; i < 200; ++i) {
+            m2D t = new m2D();
+            t.traslacion(i, 0);
+
+            m2D refX = new m2D();
+            refX.reflexionX();
+
+            m2D refY = new m2D();
+            refY.reflexionY();
+
+            g.setColor(Color.CYAN);
+            m2D mtcRef = t.multiplica(refX).multiplica(refY);
+            obj2D motorcycle_t = motorcycle.transforma(mtcRef);
+            dibObj2D(motorcycle_t, g);
+
+            cx = 300; cy = 70;
+            double angle = i * -5;
+            m2D toOrigin = new m2D();
+            toOrigin.traslacion(-cx, -cy);
+            m2D rotate = new m2D();
+            rotate.rotacion(angle);
+            m2D back = new m2D();
+            back.traslacion(cx, cy);
+            m2D mtc = toOrigin.multiplica(rotate).multiplica(t).multiplica(back).multiplica(refX).multiplica(refY);
+            obj2D tier_t = tier.transforma(mtc);
+            dibObj2D(tier_t, g);
+            try {
+                Thread.sleep(10);
+            } catch (Exception e) {}
+//            if (i != 198) {
+//                g.setColor(Color.BLACK);
+//                dibObj2D(tier_t, g);
+//                dibObj2D(motorcycle_t, g);
+//            }
+            g.setColor(Color.BLACK);
+            dibObj2D(tier_t, g);
+            dibObj2D(motorcycle_t, g);
+            g.setColor(Color.WHITE);
+            ejes(g);
 
         }
-
 
 
 
