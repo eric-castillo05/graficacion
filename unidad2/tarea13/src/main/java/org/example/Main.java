@@ -37,7 +37,7 @@ public class Main extends s3D {
 
     public void paint(Graphics g){
         ejes3D(Color.CYAN, g);
-        try (FileReader fr = new FileReader("/home/eric/Documents/dev/graficacion/unidad2/tarea13/src/main/java/org/example/ship_aristas.txt")) {
+        try (FileReader fr = new FileReader("/home/eric/Documents/dev/graficacion/unidad2/tarea13/src/main/java/org/example/peon.tib")) {
             BufferedReader br = new BufferedReader(fr);
             String linea = br.readLine();
             int ntri = Integer.parseInt(linea);
