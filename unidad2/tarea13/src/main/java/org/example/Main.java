@@ -1,5 +1,6 @@
 package org.example;
 
+import tiburcio.lib3D.m3D;
 import tiburcio.lib3D.obj3D;
 import tiburcio.lib3D.s3D;
 import tiburcio.lib3D.v3D;
@@ -68,7 +69,12 @@ public class Main extends s3D {
                 System.out.println(x0 + " " + y0 + " " + z0);
                 System.out.println(x1 + " " + y1 + " " + z1);
                 System.out.println(x2 + " " + y2 + " " + z2);
-                dibObj3D(createTriangle(x0, y0, z0, x1, y1, z1, x2, y2, z2), g);
+
+                obj3D temp = createTriangle(x0, y0, z0, x1, y1, z1, x2, y2, z2);
+                m3D esc = new m3D();
+                esc.escalacion(400, 400, 400);
+//                temp.transforma(esc);
+                dibObj3D(temp.transforma(esc), g);
 
             }
 
