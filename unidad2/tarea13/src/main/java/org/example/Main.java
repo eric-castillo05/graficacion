@@ -13,7 +13,7 @@ import java.io.IOException;
 
 public class Main extends s3D {
     public Main(){
-        DEF_SISTEMA("Transformaciones 3d", 800, 800, Color.BLACK, 45, 45, 1, 400, 400);
+        DEF_SISTEMA("Transformaciones 3d", 800, 800, Color.BLACK, 30, 30, 1, 400, 400);
     }
 
     public obj3D createTriangle(double x0,  double y0, double z0, double x1, double y1, double z1, double x2, double y2, double z2){
@@ -37,7 +37,7 @@ public class Main extends s3D {
 
     public void paint(Graphics g){
         ejes3D(Color.CYAN, g);
-        try (FileReader fr = new FileReader("/home/eric/Documents/dev/graficacion/unidad2/tarea13/src/main/java/org/example/peon.tib")) {
+        try (FileReader fr = new FileReader("/home/eric/Documents/dev/graficacion/unidad2/tarea13/src/main/java/org/example/temp.tib")) {
             BufferedReader br = new BufferedReader(fr);
             String linea = br.readLine();
             int ntri = Integer.parseInt(linea);
@@ -72,7 +72,8 @@ public class Main extends s3D {
 
                 obj3D temp = createTriangle(x0, y0, z0, x1, y1, z1, x2, y2, z2);
                 m3D esc = new m3D();
-                esc.escalacion(400, 400, 400);
+                g.setColor(Color.ORANGE);
+                esc.escalacion(150, 150, 150);
 //                temp.transforma(esc);
                 dibObj3D(temp.transforma(esc), g);
 

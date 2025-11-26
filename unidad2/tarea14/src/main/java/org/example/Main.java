@@ -8,7 +8,7 @@ public class Main extends JFrame{
 
     int ox=400, oy=400;
     double A=30, B=30;
-    int resX=1200, resY=1200;
+    int resX=800, resY=800;
 
     public int coorxd(double x, double y, double z){
         return (int)(ox + x * Math.cos(B*Math.PI/180) + z * Math.cos(A*Math.PI/180));
@@ -131,11 +131,11 @@ public class Main extends JFrame{
         int x[][]={{-300,-150,150,300},
                 {-300,-150,150,300},
                 {-300,-150,150,300},
-                {-300,-150,150,300}};
+                {-300,-150,150,100}};
         int y[][]={{0,0,0,0},
                 {0,0,0,0},
-                {0,0,0,0},
-                {0,0,0,0}};
+                {0,500,0,0},
+                {0,0,0,300}};
         g.setColor(Color.red);
         ejes3D(g);
         g.setColor(Color.green);
