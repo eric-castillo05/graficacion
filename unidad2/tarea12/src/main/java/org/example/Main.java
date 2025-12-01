@@ -13,74 +13,91 @@ public class Main extends s3D {
 
     public void paint(Graphics g) {
         ejes3D(Color.CYAN, g);
-        obj3D cubo = new obj3D("/home/eric/Documents/dev/graficacion/unidad2/tarea12/src/main/java/org/example/temp.tib");
-        g.setColor(Color.YELLOW);
-//        dibObj3D(cubo, g);
 
-        // Escalación base
+        obj3D figura = new obj3D("/home/eric/Documents/dev/graficacion/unidad2/tarea12/src/main/java/org/example/heart.txt");
+
         m3D esc = new m3D();
-        esc.escalacion(20, 20, 20);
-        obj3D cubo_esc = cubo.transforma(esc);
-//        dibObj3D(cubo_esc, g);
+        esc.escalacion(10, 10, 10);
+        obj3D figEsc = figura.transforma(esc);
 
-        // Reflexiones
-        m3D ref_yz = new m3D();
-        ref_yz.reflexionYZ();
+        m3D refXY = new m3D(); refXY.reflexionXY();
+        m3D refYZ = new m3D(); refYZ.reflexionYZ();
+        m3D refXZ = new m3D(); refXZ.reflexionXZ();
+        for (int i = 0; i <= 360; i += 1) {
 
-        m3D ref_xz = new m3D();
-        ref_xz.reflexionXZ();
+            m3D t = new m3D();
+            t.traslacion(i, i, i);
 
-        m3D ref_xy = new m3D();
-        ref_xy.reflexionXY();
+            obj3D trans = figEsc.transforma(t);
 
-        // Rotaciones
-        m3D rot_y = new m3D();
-        m3D rot_x = new m3D();
-        m3D rot_z = new m3D();
+            g.setColor(Color.YELLOW);
+            dibObj3D(trans, g);
 
-        // Traslaciones (para rotar desde punto específico)
-        m3D toOrigin = new m3D();
-        toOrigin.traslacion(-150, 0, 0);
-        m3D back = new m3D();
-        back.traslacion(150, 0, 0);
-
-        for (double ang = 0; ang < 360; ang += 5) {
-            g.setColor(Color.ORANGE);
-
-            m3D esc_anim = new m3D();
-//            esc_anim.escalacion(0.01 * ang, 0.01 * ang, 0.01 * ang);
-
-            rot_x.rotacionX(ang);
-            rot_y.rotacionY(ang);
-            rot_z.rotacionZ(ang);
-
-            m3D tras = new m3D();
-            tras.traslacion(ang * -0.2, ang * 0.1, ang / 2);
-
-            m3D mtc = new m3D();
-            mtc = esc_anim
-                    .multiplica(ref_yz)
-                    .multiplica(rot_x)
-                    .multiplica(ref_xy)
-                    .multiplica(rot_y)
-                    .multiplica(ref_xz)
-                    .multiplica(rot_z)
-//                    .multiplica(toOrigin)
-                    .multiplica(tras);
-//                    .multiplica(back);
-
-            obj3D cubo_transf = cubo_esc.transforma(mtc);
-            dibObj3D(cubo_transf, g);
-
-            try {
-                Thread.sleep(100);
-            } catch (Exception e) {}
 
             g.setColor(Color.BLACK);
-            dibObj3D(cubo_transf, g);
+            dibObj3D(trans, g);
             ejes3D(Color.CYAN, g);
+            try { Thread.sleep(10); } catch (Exception e) {}
+
+        }
+
+        for (int ang = 0; ang < 360; ang += 1) {
+            m3D es =  new m3D();
+            es.escalacion(ang/100, ang/50, ang/20);
+            m3D r = new m3D();
+            r.rotacionY(ang);
+
+            obj3D rotado = figEsc.transforma(r).transforma(es);
+
+            g.setColor(Color.ORANGE);
+            dibObj3D(rotado, g);
+
+
+            g.setColor(Color.BLACK);
+            dibObj3D(rotado, g);
+            ejes3D(Color.CYAN, g);
+            try { Thread.sleep(20); } catch (Exception e) {}
+
+        }
+
+        for (int ang = 0; ang < 360; ang += 1) {
+
+            m3D rotX = new m3D();
+            rotX.rotacionX(ang);
+
+            m3D rotY = new m3D();
+            rotY.rotacionY(ang);
+
+            m3D rotZ = new m3D();
+            rotZ.rotacionZ(ang);
+
+            obj3D figXY = figEsc.transforma(refXY.multiplica(rotX));
+
+            obj3D figYZ = figEsc.transforma(refYZ.multiplica(rotY));
+
+            obj3D figXZ = figEsc.transforma(refXZ.multiplica(rotZ));
+
+            g.setColor(Color.GREEN);
+            dibObj3D(figXY, g);
+
+            g.setColor(Color.CYAN);
+            dibObj3D(figYZ, g);
+
+            g.setColor(Color.MAGENTA);
+            dibObj3D(figXZ, g);
+
+
+            g.setColor(Color.BLACK);
+            dibObj3D(figXY, g);
+            dibObj3D(figYZ, g);
+            dibObj3D(figXZ, g);
+            ejes3D(Color.CYAN, g);
+            try { Thread.sleep(20); } catch (Exception e) {}
+
         }
     }
+
+
 
     public static void main(String[] args) {
         Main main = new Main();
