@@ -6,6 +6,6 @@
   }
   background { color rgb <.5, .5, .5> }
   light_source { <10, 50, -100> White }
-  superellipsoid { <.25, .25>
+  superellipsoid { <.9, .1>
     pigment { Red }
   }

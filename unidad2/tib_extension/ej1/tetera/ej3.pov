@@ -18,6 +18,9 @@ background {color rgb <0,0.1,0>}
      object{
        teteraConOjos(Cyan)
        scale 0.3
+       // rotate<0, clock*360, 0>
+       rotate<0, 0, -30>
+       rotate<0, clock*360, 0>
        translate <px,0,pz>
      }
      #declare pz=pz+0.6;

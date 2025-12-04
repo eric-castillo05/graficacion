@@ -29,7 +29,18 @@ camera {
    right x*image_width/image_height
    look_at <0,0,0>    
    rotate y*360*clock
-}   
+}              
+global_settings {
+  radiosity {
+    pretrace_start 0.08
+    pretrace_end   0.04
+    count 150
+    nearest_count 10
+    error_bound 1.8
+    recursion_limit 3
+    brightness 1.5 // Boosts the lighting effect
+  }
+}
 
 //ejes3Dc(Red,0.1)
 

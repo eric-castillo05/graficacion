@@ -1,90 +1,115 @@
 package org.example;
 
-import tiburcio.lib3D.m3D;
-import tiburcio.lib3D.obj3D;
-import tiburcio.lib3D.s3D;
-import tiburcio.lib3D.v3D;
-
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Graphics;
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
+import javax.swing.JFrame;
 
-public class Main extends s3D {
+public class Main extends JFrame{
+    int resX =800;
+    int resY = 600;
+    int Ox = 400;
+    int Oy = 300;
+    double A = 30;
+    double B = 30;
+
     public Main(){
-        DEF_SISTEMA("Transformaciones 3d", 800, 800, Color.BLACK, 30, 30, 1, 400, 400);
-    }
-
-    public obj3D createTriangle(double x0,  double y0, double z0, double x1, double y1, double z1, double x2, double y2, double z2){
-        obj3D triangle = new obj3D(3, 3);
-
-        triangle.vertice[0] = new v3D(x0, y0, z0);
-        triangle.vertice[1] = new v3D(x1, y1, z1);
-        triangle.vertice[2] = new v3D(x2, y2, z2);
-
-        triangle.arista[0][0] = 0;
-        triangle.arista[0][1] = 1;
-
-        triangle.arista[1][0] = 1;
-        triangle.arista[1][1] = 2;
-
-        triangle.arista[2][0] = 2;
-        triangle.arista[2][1] = 0;
-
-        return triangle;
+        setSize(resX, resY);
+        setTitle("Graficas 3D");
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
     public void paint(Graphics g){
-        ejes3D(Color.CYAN, g);
-        try (FileReader fr = new FileReader("/home/eric/Documents/dev/graficacion/unidad2/tarea13/src/main/java/org/example/temp.tib")) {
+        g.fillRect(0, 0, resX-1, resY-1);
+        g.setColor(Color.red);
+        g.setColor(Color.pink);
+        ejes3D(g);
+        g.setColor(Color.red);
+
+
+        //try (FileReader fr = new FileReader("modelosdraw/tetera.tib")) {
+        try (FileReader fr = new FileReader("C:\\Users\\misae\\OneDrive\\Documentos\\generartib\\teteradoble\\teteradoble.tib")) {
             BufferedReader br = new BufferedReader(fr);
-            String linea = br.readLine();
-            int ntri = Integer.parseInt(linea);
-            System.out.println(ntri);
-            for (int i = 1; i <= ntri; i++) {
-                double x0 = 0, y0 = 0, z0 = 0;
-                double x1 = 0, y1 = 0, z1 = 0;
-                double x2 = 0, y2 = 0, z2 = 0;
-                for (int v = 0; v < 3; v++) {
-                    linea = br.readLine();
-                    String valores[] = linea.split(",");
-                    double x = Double.parseDouble(valores[0]);
-                    double y = Double.parseDouble(valores[1]);
-                    double z = Double.parseDouble(valores[2]);
-                    if (v == 0){
-                        x0 = x;
-                        y0 = y;
-                        z0 = z;
-                    } else if (v == 1){
-                        x1 = x;
-                        y1 = y;
-                        z1 = z;
-                    } else if (v == 2){
-                        x2 = x;
-                        y2 = y;
-                        z2 = z;
+            // Lectura del fichero
+            String linea;
+            int fe=100;
+            linea=br.readLine();
+            int ntri=Integer.parseInt(linea);
+            System.out.println("Numero de triangulos:"+ntri);
+            for (int i=1;i<=ntri;i++){
+                System.out.println("Triangulo "+i);
+                double x0=0,y0=0,z0=0;
+                double x1=0,y1=0,z1=0;
+                double x2=0,y2=0,z2=0;
+                for (int v=0;v<3;v++){
+                    linea=br.readLine();
+                    String valores[]=linea.split(",");
+                    double x=Double.parseDouble(valores[0]);
+                    double y=Double.parseDouble(valores[1]);
+                    double z=Double.parseDouble(valores[2]);
+                    switch (v) {
+                        case 0:
+                            x0=x;
+                            y0=y;
+                            z0=z;
+                            break;
+                        case 1:
+                            x1=x;
+                            y1=y;
+                            z1=z;
+                            break;
+                        case 2:
+                            x2=x;
+                            y2=y;
+                            z2=z;
+                            break;
                     }
+                    //System.out.println(linea);
                 }
-                System.out.println(x0 + " " + y0 + " " + z0);
-                System.out.println(x1 + " " + y1 + " " + z1);
-                System.out.println(x2 + " " + y2 + " " + z2);
+           /* System.out.println(String.format("%10.4f %10.4f %10.4f", x0,y0,z0));
+            System.out.println(String.format("%10.4f %10.4f %10.4f", x1,y1,z1));
+            System.out.println(String.format("%10.4f %10.4f %10.4f", x2,y2,z2));
+            System.out.println("================================");*/
 
-                obj3D temp = createTriangle(x0, y0, z0, x1, y1, z1, x2, y2, z2);
-                m3D esc = new m3D();
-                g.setColor(Color.ORANGE);
-                esc.escalacion(150, 150, 150);
-//                temp.transforma(esc);
-                dibObj3D(temp.transforma(esc), g);
-
+                linea3D(x0*fe,y0*fe,z0*fe, x1*fe,y1*fe,z1*fe, g);
+                linea3D(x1*fe,y1*fe,z1*fe, x2*fe,y2*fe,z2*fe, g);
+                linea3D(x2*fe,y2*fe,z2*fe, x0*fe,y0*fe,z0*fe, g);
             }
-
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        }
+        catch(Exception e){
+            e.printStackTrace();
         }
 
+
     }
+
+    public int coorXD(double x, double y, double z){
+        return (int) (Ox + (x*Math.cos(Math.toRadians(B))) + z * Math.cos(Math.toRadians(A)));
+    }
+
+    public int coorYD(double x, double y, double z){
+        return (int) (Oy - (y - (x * Math.sin(Math.toRadians(B))) + z * Math.sin(Math.toRadians(A))));
+    }
+
+    public void ejes3D(Graphics g){
+        g.drawLine(Ox, Oy, coorXD(1000, 0, 0), coorYD(1000, 0, 0));
+        g.drawLine(Ox, Oy, coorXD(0, 1000, 0), coorYD(0, 1000, 0));
+        g.drawLine(Ox, Oy, coorXD(0, 0, -1000), coorYD(0, 0, -1000));
+    }
+
+    public void dibujaPrixel(double x, double y, double z, Graphics g){
+        g.fillRect(coorXD(x, y, z), coorYD(x, y, z), 1, 1);
+    }
+
+    public void linea3D(double x1, double y1, double z1, double x2, double y2, double z2, Graphics g){
+        g.drawLine(coorXD(x1, y1, z1), coorYD(x1, y1, z1), coorXD(x2, y2, z2), coorYD(x2, y2, z2));
+    }
+
     public static void main(String[] args) {
         Main main = new Main();
     }
+
 }
